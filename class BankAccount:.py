@@ -1,5 +1,5 @@
 class BankAccount:
-    def __init__(self, account_number, account_holder, initial_balance=0.0):
+    def __init__(self, account_number, account_holder, initial_balance = 0.0):
         self.account_number = account_number
         self.account_holder = account_holder
         self.balance = float(initial_balance)
@@ -15,7 +15,7 @@ class BankAccount:
         if amount <= 0:
             print("Deposit amount must be greater than zero.")
             return False
-            
+
         self.balance += amount
         self._add_transaction("Deposit", amount)
         print(self._format_receipt("Deposit Successful", amount))
@@ -46,7 +46,7 @@ class BankAccount:
 
         print(f"TRANSACTION HISTORY FOR ACC: {self.account_number}")
         print(f"{'Type':<20} | {'Amount':<12}")
-        print("-" * 55)
+        print("")
   
         for tx in self.transaction_history:
             print(f"{tx['type']:<20} | ${tx['amount']:>10,.2f}")
